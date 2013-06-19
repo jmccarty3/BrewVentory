@@ -1,0 +1,36 @@
+<head>
+  <title>myBeer</title>
+</head>
+
+<body>
+    {{> inventory}}
+    {{> newBeer}}
+</body>
+
+
+<template name="inventory">
+  <h1>Current Inventory</h1>
+  {{#if stock}}
+	{{#each stock}}
+      		{{> beer}}
+	{{/each}}
+  {{else}}
+  <h1> No Stock </h1>
+  {{/if}}
+
+</template>
+
+<template name="beer">
+  <div class="beer {{selected}}">
+	  <div class="beer_name">{{name}}</div>
+	  <div class="brewer_name">{{brewer}}</div>
+  </div>
+</template>
+
+<template name="newBeer">
+    <input type="text"   class="name box" value="{{name}}"/>
+    <option class="brewery list" />
+    <input type="button" class="add" value="Add Beer"/>
+</template>
+
+
