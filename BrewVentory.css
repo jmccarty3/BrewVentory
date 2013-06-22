@@ -1,5 +1,6 @@
 /* CSS declarations go here */
 
-#beer .selected{
-    background: Blue
+.beer.selected {
+    background-color: Orange;
+    font-size: 20;
 }
