@@ -21,9 +21,6 @@ if (Meteor.isClient) {
   //Helper Function to add/remove from the selection list
   function selectedBeerIndex(id){
           var selectedList = Session.get('selectedBeers');
-          console.log("List: ");
-          console.log(selectedList);
-          console.log("Selected List Lenght: " + selectedList.length);
 
           try{
               for(var index =0; index < selectedList.length; index++){
@@ -42,7 +39,6 @@ if (Meteor.isClient) {
 
   Template.beer.events({
       "click" : function() {
-          console.log("Clicked a beer: " + this.name );
           var index = selectedBeerIndex(this._id);
           var list = Session.get('selectedBeers');
 
@@ -70,9 +66,6 @@ if (Meteor.isClient) {
   Template.newBeer.events({
       "click input.add": function(){
           console.log("Adding beer")
-          console.log(this.name);
-          console.log(this);
-          console.log(this._id);
           //Beers.insert({name: this.name, brewery: "nullz" });
       }
   });
