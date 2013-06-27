@@ -66,7 +66,7 @@ if (Meteor.isClient) {
   Template.newBeer.events({
       "click input.add": function(){
           console.log("Adding beer")
-          //Beers.insert({name: this.name, brewery: "nullz" });
+          Beers.insert({name: this.name, brewery: "nullz" });
       }
   });
 }
